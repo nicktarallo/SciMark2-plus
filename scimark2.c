@@ -19,8 +19,10 @@ static struct option const long_options[] =
 
 void usage ()
 {
-    fputs ("Usage: scimark2 [OPTION]... [FILE]...\n", stdout);
+    fputs ("Usage: scimark2 [options]\n\n", stdout);
     fputs ("\
+Perform several benchmarks for scientific and numerical computing.\n\n\
+Options:\n\
   -b, --benchmark=BENCH    Run any of the following benchmarks:\n\
                              all:    Run all subtests below (default)\n\
                              fft:    Fast Fourier Transform\n\
