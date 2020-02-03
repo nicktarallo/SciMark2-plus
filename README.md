@@ -1,7 +1,7 @@
 # SciMark2-plus
 This is an improved version of the SciMark 2.0 benchmark, originally developed by [Roldan Pozo](https://math.nist.gov/~RPozo/) and [Bruce Miller](https://math.nist.gov/~BMiller/). This is based on source code downloaded from the [official webpage](https://math.nist.gov/scimark2/download_c.html) on 2020-02-03.
 
-Below is the original benchmark description, taken from the [official webpage](https://math.nist.gov/scimark2/download_c.html).
+Below is a modified version of the original benchmark description, taken from the [official webpage](https://math.nist.gov/scimark2/download_c.html).
 
 ---
 
@@ -27,17 +27,16 @@ This produces an output similar to
 ** for details. (Results can be submitted to pozo@nist.gov)     **
 **                                                              **
 Using       2.00 seconds min time per kenel.
-Composite Score:           65.56
 FFT             Mflops:    63.38    (N=1024)
 SOR             Mflops:   124.80    (100 x 100)
 MonteCarlo:     Mflops:    16.05
 Sparse matmult  Mflops:    59.15    (N=1000, nz=5000)
 LU              Mflops:    64.40    (M=100, N=100)
-0:29.62 Elapsed, 29.620 user sec, 0.010 sys sec, 100.0% utilization.
+Composite Score:           65.56
 ```
 
 The first SciMark number reported is the composite score, followed by the an approximate Mflop rate for each kernel.
 
 To run the "large" version of this benchmark (with data structures that typically do not fit in cache) use
 
->scimark2 -large
+>scimark2 --large
