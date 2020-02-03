@@ -16,7 +16,14 @@
 #define FALSE 0
 #endif
 
+/* benchmark types */
 
+const  int BENCH_ALL = 0;  /* default option: run all benchmarks */
+const  int BENCH_FFT = 1;
+const  int BENCH_SOR = 2;
+const  int BENCH_MONTE =3;
+const  int BENCH_SPARSE = 4;
+const  int BENCH_LU = 5;
 
 #endif
 
