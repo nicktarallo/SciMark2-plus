@@ -1,7 +1,28 @@
 # SciMark2-plus
 This is an improved version of the SciMark 2.0 benchmark, originally developed by [Roldan Pozo](https://math.nist.gov/~RPozo/) and [Bruce Miller](https://math.nist.gov/~BMiller/). This is based on source code downloaded from the [official webpage](https://math.nist.gov/scimark2/download_c.html) on 2020-02-03.
 
-Below is a modified version of the original benchmark description, taken from the [official webpage](https://math.nist.gov/scimark2/download_c.html).
+For general usage, use the `-h` or `--help` option:
+<pre>
+Usage: scimark2 [options]
+
+Perform several benchmarks for scientific and numerical computing.
+
+Options:
+  -b, --benchmark=BENCH    Run any of the following benchmarks:
+                             all:    Run all subtests below (default)
+                             fft:    Fast Fourier Transform
+                             sor:    Jacobi Successive Over-relaxation
+                             monte:  Monte Carlo integration
+                             sparse: Sparse matrix multiply
+                             lu:     Dense LU matrix factorization
+  -l, --large              Use data structures that do not typically fit in
+                             cache
+  -t, --mintime=NUM        Specify minimum length of time in seconds to run
+                             each benchmark
+  -h, --help               Display this help and exit
+</pre>
+
+For steps on building this benchmark, see below for a modified version of the original description taken from the [official webpage](https://math.nist.gov/scimark2/download_c.html).
 
 ---
 
