@@ -96,7 +96,7 @@
 
 
     double kernel_measureSparseMatMult(int N, int nz, 
-            double min_time, Random R)
+            double min_time, Random R, double* time_taken)
     {
         /* initialize vector multipliers and storage for result */
         /* y = A*y;  */
@@ -159,20 +159,21 @@
                 
         }
 
+        /* Set cycles to be 1 million rather than searching for 2 seconds */
+	/* This makes it easier to benchmark based on time*/
+        cycles = 1000000;
+        Stopwatch_start(Q);
+        SparseCompRow_matmult(N, y, val, row, col, x, cycles);
+        Stopwatch_stop(Q);
+        
 
-        while(1)
-        {
-            Stopwatch_start(Q);
-            SparseCompRow_matmult(N, y, val, row, col, x, cycles);
-            Stopwatch_stop(Q);
-            if (Stopwatch_read(Q) >= min_time) break;
-
-            cycles *= 2;
-        }
+	printf("Cycles: %d\n", cycles);
         /* approx Mflops */
         result = SparseCompRow_num_flops(N, nz, cycles) / 
                         Stopwatch_read(Q) * 1.0e-6;
 
+	printf("Time in seconds: %lf sec.\n", Stopwatch_read(Q));
+	*time_taken = Stopwatch_read(Q);
         Stopwatch_delete(Q);
         free(row);
         free(col);

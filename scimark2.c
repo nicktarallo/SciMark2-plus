@@ -110,7 +110,8 @@ int main (int argc, char *argv[])
 
     /* run the benchmark */
     print_banner();
-    printf("Using %10.2f seconds min time per kernel.\n", min_time);
+    /* We are not using a min time per kernel for the sparse matrix multiplication */
+    /* printf("Using %10.2f seconds min time per kernel.\n", min_time); */
 
     if (bench_type == BENCH_FFT || bench_type == BENCH_ALL) 
     {
@@ -131,10 +132,21 @@ int main (int argc, char *argv[])
     }
     if (bench_type == BENCH_SPARSE || bench_type == BENCH_ALL) 
     {
-        res[4] = kernel_measureSparseMatMult( Sparse_size_M, 
-                Sparse_size_nz, min_time, R);
-        printf("Sparse matmult  Mflops: %8.2f    (N=%d, nz=%d)\n", res[4], 
+	int iterations = 10;
+	double total_time = 0;
+	/* Add looping to run 10 times */
+	int i;
+	double time_on_loop;
+	for (i = 0; i < 10; i++) {
+	    res[4] = kernel_measureSparseMatMult( Sparse_size_M,
+                Sparse_size_nz, min_time, R, &time_on_loop);
+            printf("Sparse matmult  Mflops: %8.2f    (N=%d, nz=%d)\n", res[4],
                 Sparse_size_M, Sparse_size_nz);
+	    total_time += time_on_loop;
+	} 
+	double average_time = total_time / ((double) iterations);
+	printf("\nAverage time per 5M: %lf\n", average_time);
+        
     }
     if (bench_type == BENCH_LU || bench_type == BENCH_ALL) 
     {

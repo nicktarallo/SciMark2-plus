@@ -1,0 +1,37 @@
+Running benchmark: sparse
+**                                                              **
+** SciMark2 Numeric Benchmark, see http://math.nist.gov/scimark **
+** for details. (Results can be submitted to pozo@nist.gov)     **
+**                                                              **
+Cycles: 1000000
+Time in seconds: 23.292410 sec.
+Sparse matmult  Mflops:   429.32    (N=1000, nz=5000)
+Cycles: 1000000
+Time in seconds: 23.394333 sec.
+Sparse matmult  Mflops:   427.45    (N=1000, nz=5000)
+Cycles: 1000000
+Time in seconds: 23.323844 sec.
+Sparse matmult  Mflops:   428.75    (N=1000, nz=5000)
+Cycles: 1000000
+Time in seconds: 23.190217 sec.
+Sparse matmult  Mflops:   431.22    (N=1000, nz=5000)
+Cycles: 1000000
+Time in seconds: 20.560653 sec.
+Sparse matmult  Mflops:   486.37    (N=1000, nz=5000)
+Cycles: 1000000
+Time in seconds: 20.534684 sec.
+Sparse matmult  Mflops:   486.98    (N=1000, nz=5000)
+Cycles: 1000000
+Time in seconds: 20.610844 sec.
+Sparse matmult  Mflops:   485.18    (N=1000, nz=5000)
+Cycles: 1000000
+Time in seconds: 20.687203 sec.
+Sparse matmult  Mflops:   483.39    (N=1000, nz=5000)
+Cycles: 1000000
+Time in seconds: 20.684841 sec.
+Sparse matmult  Mflops:   483.45    (N=1000, nz=5000)
+Cycles: 1000000
+Time in seconds: 20.673585 sec.
+Sparse matmult  Mflops:   483.71    (N=1000, nz=5000)
+
+Average time per 5M: 21.695261
