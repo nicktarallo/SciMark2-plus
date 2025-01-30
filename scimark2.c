@@ -145,7 +145,7 @@ int main (int argc, char *argv[])
 	    total_time += time_on_loop;
 	} 
 	double average_time = total_time / ((double) iterations);
-	printf("\nAverage time per 5M: %lf\n", average_time);
+	printf("\nAverage time per 1M: %lf\n", average_time);
         
     }
     if (bench_type == BENCH_LU || bench_type == BENCH_ALL) 
